@@ -1,0 +1,14 @@
+resilience4j.ratelimiter:
+  instances:
+    service1:
+      limitForPeriod: 1
+      limitRefreshPeriod: 10s
+      timeoutDuration: 1ms
+
+resilience4j.circuitbreaker:
+  instances:
+    registrationService:
+      ringBufferSizeInClosedState: 6
+      ringBufferSizeInHalfOpenState: 4
+      waitDurationInOpenState: 20s
+      failureRateThreshold: 60
